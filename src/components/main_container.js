@@ -3,15 +3,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { getAngler } from '../actions/angler';
 
-import {
-  Table,
-  TableBody,
-  TableHeader,
-  TableHeaderColumn,
-  TableRow,
-  TableRowColumn,
-} from 'material-ui/Table';
-
 
 class MainContainer extends Component {
 
@@ -23,31 +14,31 @@ class MainContainer extends Component {
 
     const blueFish = this.props.blue.map((fish, i) => {
       return(
-        <TableRow key={i}>
-          <TableRowColumn>{i+1}</TableRowColumn>
-          <TableRowColumn>{fish.fish.angler}</TableRowColumn>
-          <TableRowColumn>{fish.weight}</TableRowColumn>
-        </TableRow>
+        <tr key={i}>
+          <td>{i+1}</td>
+          <td>{fish.fish.angler}</td>
+          <td>{fish.weight}</td>
+        </tr>
       )
     });
 
     const channelFish = this.props.channel.map((fish, i) => {
       return(
-        <TableRow key={i}>
-          <TableRowColumn>{i+1}</TableRowColumn>
-          <TableRowColumn>{fish.fish.angler}</TableRowColumn>
-          <TableRowColumn>{fish.weight}</TableRowColumn>
-        </TableRow>
+        <tr key={i}>
+          <td>{i+1}</td>
+          <td>{fish.fish.angler}</td>
+          <td>{fish.weight}</td>
+        </tr>
       )
     })
 
     const flatheadFish = this.props.flathead.map((fish, i) => {
       return(
-        <TableRow key={i}>
-          <TableRowColumn>{i+1}</TableRowColumn>
-          <TableRowColumn>{fish.fish.angler}</TableRowColumn>
-          <TableRowColumn>{fish.weight}</TableRowColumn>
-        </TableRow>
+        <tr key={i}>
+          <td>{i+1}</td>
+          <td>{fish.fish.angler}</td>
+          <td>{fish.weight}</td>
+        </tr>
       )
     })
 
@@ -57,44 +48,40 @@ class MainContainer extends Component {
     return(
       <div>
         <h3>Blue Fish</h3>
-        <Table selectable={false}>
-          <TableHeader>
-            <TableRow>
-              <TableHeaderColumn>Rank</TableHeaderColumn>
-              <TableHeaderColumn>Angler</TableHeaderColumn>
-              <TableHeaderColumn>Weight</TableHeaderColumn>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
+        <table>
+          <thead>
+            <th>Rank</th>
+            <th>Angler</th>
+            <th>Weight</th>
+          </thead>
+          <tbody>
             {blueFish}
-          </TableBody>
-        </Table>
+          </tbody>
+        </table>
+
         <h3>Channel Fish</h3>
-        <Table selectable={false}>
-          <TableHeader>
-            <TableRow>
-              <TableHeaderColumn>Rank</TableHeaderColumn>
-              <TableHeaderColumn>Angler</TableHeaderColumn>
-              <TableHeaderColumn>Weight</TableHeaderColumn>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
+        <table>
+          <thead>
+            <th>Rank</th>
+            <th>Angler</th>
+            <th>Weight</th>
+          </thead>
+          <tbody>
             {channelFish}
-          </TableBody>
-        </Table>
+          </tbody>
+        </table>
+
         <h3>Flat Head Fish</h3>
-        <Table selectable={false}>
-          <TableHeader>
-            <TableRow>
-              <TableHeaderColumn>Rank</TableHeaderColumn>
-              <TableHeaderColumn>Angler</TableHeaderColumn>
-              <TableHeaderColumn>Weight</TableHeaderColumn>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
+        <table>
+          <thead>
+            <th>Rank</th>
+            <th>Angler</th>
+            <th>Weight</th>
+          </thead>
+          <tbody>
             {flatheadFish}
-          </TableBody>
-        </Table>
+          </tbody>
+        </table>
       </div>
     );
   }

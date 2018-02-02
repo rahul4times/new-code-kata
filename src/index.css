@@ -2,4 +2,10 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  margin-left: 20px;
+}
+table, th, tr, td{
+  border-collapse: collapse;
+  border: 1px solid #000;
+  padding: 10px;
 }
