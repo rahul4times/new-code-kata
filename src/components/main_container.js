@@ -12,7 +12,7 @@ class MainContainer extends Component {
 
   render(){
 
-    console.log("Data: ", this.props.angler);
+    console.log("Data here: ", this.props);
 
     return(
       <div>
@@ -23,10 +23,33 @@ class MainContainer extends Component {
 }
 
 function mapStateToProps(state, props){
+
+  // Getting the fish weight here and also passing fish
+  const fishWeight = state.angler.map(fish => {
+    return { fish, weight: Math.round(fish.length * fish.girth * fish.girth / 800) };
+  });
+
+
+  // Sorting fish here
+  const fishesInSortedForm = fishWeight.sort((a,b) => b.weight - a.weight);
+
+  // blue
+  const blue = fishesInSortedForm.filter(fish => fish.fish.species === "blue");
+
+  // flathead
+  const flatHead = fishesInSortedForm.filter(fish => fish.fish.species === "flathead");
+
+  // channel
+  const channel = fishesInSortedForm.filter(fish => fish.fish.species === "channel");
+
+
   return {
-    angler: state.angler
+    blue: blue,
+    flathead: flatHead,
+    channel: channel
   }
 }
+
 
 function mapDispatchToProps(dispatch){
   return {
