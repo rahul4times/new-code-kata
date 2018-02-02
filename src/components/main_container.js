@@ -11,7 +11,10 @@ class MainContainer extends Component {
   }
 
   render(){
-
+      /*
+        Performing data reductions in render is not the best place to do this.
+        Typically we'd do this in the reducer and leave rendering to the render functions
+      */
     const blueFish = this.props.blue.map((fish, i) => {
       return(
         <tr key={i}>
@@ -45,6 +48,10 @@ class MainContainer extends Component {
 
     // console.log("Data here: ", this.props);
 
+    /*
+        This is unforntualtely uselss to me. Requirements were material-ui beta
+        and these were told before the kata. 
+    */
     return(
       <div>
         <h3>Blue Fish</h3>
