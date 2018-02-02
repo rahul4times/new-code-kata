@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-
+import MainContainer from './components/main_container';
 
 class App extends Component {
   render() {
     return (
       <div>
-        code-kata
+        <MainContainer />
       </div>
     );
   }
